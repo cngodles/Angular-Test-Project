@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app>
+    <head>
+    	<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div ng-controller="products" style="padding:10px;">
+            <h2>Load Data, then display it.</h2>
+            <button ng-click="fetch()">Get the Data</button>
+            <div style="height:30px; clear:both; display:block;"></div>
+            <div>
+                <label>Sort by:</label>
+                <select ng-model="selectedFilter">
+                    <option value="price" selected="selected">Price</option>
+                    <option value="name">Name</option>
+                </select>
+            </div>
+            <div style="height:30px; clear:both; display:block;"></div>
+            <ul class="list-group">
+                <li ng-repeat="product in items | orderBy:selectedFilter" class="list-group-item">
+                    {{product.name}} <em class="pull-right">{{product.price | currency}}</em>   
+                </li>
+            </ul>
+            <div style="height:100px; clear:both; display:block;"></div>
+            <h2>Raw Data:</h2>
+            <pre>http status code: 
+            {{status}}</pre>
+            <pre>http response data: 
+            {{data}}</pre>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+        <script src="data.js"></script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+[
+    {
+        "name": "My Product 1",
+        "price": 5
+    },
+    {
+        "name": "Your Product 2",
+        "price": 10.99
+    },
+    {
+        "name": "The Product 3",
+        "price": 15
+    },
+    {
+        "name": "Zipline Product 4",
+        "price": 20.01
+    },
+    {
+        "name": "VitaminWater - Raspberry Citrus",
+        "price": 2.89
+    },
+    {
+        "name": "Yashica GSN 45mm F1.7",
+        "price": 189.95
+    },
+	{
+        "name": "Cocaine (40 kilos)",
+        "price": 2900.95
+    },
+	{
+        "name": "Half of a Double Day Cheeseburger",
+        "price": 4.49
+    }
+]

@@ -1,0 +1,51 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="optionalModuleName">
+    <head>
+    	<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+        
+        <!--[if lte IE 7]>
+        <script src="json2.js"></script>
+        <![endif]-->
+        <!--[if lte IE 8]>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            angular.bootstrap(document);
+        });
+        </script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+    </head>
+    <body>
+        <div ng-controller="products" style="padding:10px;">
+            <h2>Load Data, then display it.</h2>
+            <button ng-click="fetch()">Get the Data</button>
+            <div style="height:30px; clear:both; display:block;"></div>
+            <div>
+                <label>Sort by:</label>
+                <select ng-model="selectedFilter">
+                    <option value="price" selected="selected">Price</option>
+                    <option value="name">Name</option>
+                </select>
+            </div>
+            <div style="height:30px; clear:both; display:block;"></div>
+            <ul class="list-group">
+                <li ng-repeat="product in items | orderBy:selectedFilter" class="list-group-item">
+                    {{product.name}} <em class="pull-right">{{product.price | currency}}</em>   
+                </li>
+            </ul>
+            <div style="height:100px; clear:both; display:block;"></div>
+            <h2>Raw Data:</h2>
+            <pre>http status code: 
+            {{status}}</pre>
+            <pre>http response data: 
+            {{data}}</pre>
+        </div>
+        
+    </body>
+</html>
