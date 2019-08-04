@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test2';
+	
+	clickCounter2:Number = 0;
+	
 }
