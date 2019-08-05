@@ -10,10 +10,10 @@ export class PageHomepageComponent implements OnInit {
 	clickCounter:Number = 0;
 	name:String = '';
 	
-  constructor(private _http: HttpService) { }
+  constructor() { }
 
   ngOnInit() {
-		this._http.myMethod();
+		//this._http.myMethod();
   }
 	
 	countClick() {
